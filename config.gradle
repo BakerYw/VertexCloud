@@ -1,0 +1,106 @@
+ext {
+
+    android = [
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.3",
+            applicationIdDev : "com.ahead.aheadoanew",
+            applicationId    : "com.ahead.aheadoanew",
+            minSdkVersion    : 21,
+            targetSdkVersion : 30,
+            versionCode      : 20211020,
+            versionName      : "1.0.0",
+            apiBaseDev       : '"https://test.jxusptpay.com/"',
+            apiBase          : '"https://oa.jxusptpay.com/"',
+            apiWebUrlDev     : '"https://test.jxusptpay.com/aheadOA/App/"',
+            apiWebUrl        : '"https://oa.jxusptpay.com/aheadOA/App/"',
+            apiServerUrlDev  : '"https://test.jxusptpay.com/aheadOA/"',
+            apiServerUrl     : '"https://oa.jxusptpay.com/aheadOA/"',
+    ]
+
+    version = [
+            dagger2SdkVersion: "2.23.2",
+            canarySdkVersion : "1.6.3"
+    ]
+    dependencies = [
+            //tools
+            "dagger2-compiler"  : "com.google.dagger:dagger-compiler:${version["dagger2SdkVersion"]}",
+            //test
+            "junit"             : "junit:junit:4.12",
+            "androidJUnitRunner": "android.support.test.runner.AndroidJUnitRunner",
+            "canary-debug"      : "com.squareup.leakcanary:leakcanary-android:${version["canarySdkVersion"]}",
+            "canary-release"    : "com.squareup.leakcanary:leakcanary-android-no-op:${version["canarySdkVersion"]}",
+    ]
+    customDeps = [
+            //androidX基础库
+            "appcompat"            : "androidx.appcompat:appcompat:1.1.0",
+            "material"             : "com.google.android.material:material:1.2.0-alpha01",
+            "constraintlayout"     : "androidx.constraintlayout:constraintlayout:1.1.3",
+            "preference"           : "androidx.preference:preference:1.1.0",
+            "cardview"             : "androidx.cardview:cardview:1.0.0",
+            "biometric"            : "androidx.biometric:biometric:1.0.1",
+            "loginbutton"          : 'com.github.FlodCoding:LoadingButton:1.1.0-alpha01',
+            //utils
+            "persistentCookieJar"  : "com.github.franmontiel:PersistentCookieJar:1.0.1",
+            "okhttputils"          : "com.zhy:okhttputils:2.6.2",//准备删除，暂时使用
+            "utilcode"             : "com.blankj:utilcodex:1.28.0",
+            "eventbus"             : "org.greenrobot:eventbus:3.1.1",
+            "multidex"             : "com.android.support:multidex:1.0.3",
+            "lifecyclemodel"       : "me.jessyan:lifecyclemodel:1.0.1",
+            "retrofit-url-manager" : "me.jessyan:retrofit-url-manager:1.4.0",
+            "progressmanager"      : "me.jessyan:progressmanager:1.5.0",
+            "switchbutton"         : "com.kyleduo.switchbutton:library:2.0.0",
+            "paginate"             : "com.github.markomilos:paginate:0.5.1",
+            //popwindow
+            "base-pop"             : 'com.github.razerdp:BasePopup:2.2.2.2',
+            "pickerview"           : 'com.contrarywind:Android-PickerView:4.1.9',
+            "colorpicker"          : 'com.github.duanhong169:colorpicker:1.1.6',
+            "agentwebview"         : "com.just.agentweb:agentweb:4.1.2",
+            "ShadowLayout"         : "com.github.lihangleo2:ShadowLayout:3.2.0",
+            "dialog-v3x"           : 'com.kongzue.dialog_v3x:dialog:3.2.4',
+            //SuperTextView
+            "supertext"            : 'com.github.lygttpod:SuperTextView:2.4.2',
+            //图片压缩算法
+            "Luban"                : "top.zibin:Luban:1.1.8",
+            "Jsoup"                : 'org.jsoup:jsoup:1.9.2',
+            //    二维码
+            "zxing"                : "com.journeyapps:zxing-android-embedded:3.5.0",
+            //fragment管理库
+            "fragmentationx"       : 'me.yokeyword:fragmentationx:1.0.1',
+            //底部导航栏
+            "bottom-navigation"    : 'com.etebarian:meow-bottom-navigation-java:1.2.0',
+            //tablayout指示器
+            "Magicindicator"       : 'com.github.hackware1993:MagicIndicator:1.6.0',
+            //轮播图
+            "banner"               : 'cn.bingoogolapple:bga-banner:2.2.6@aar',
+            //baseAdapter
+            "baseadapter"          : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46',
+            //下拉刷新
+            "smartRefreshLayout"   : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-11",
+            "SmartRefreshHeader"   : "com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-andx-11",
+            //页面管理框架
+            "loadsir"              : 'com.kingja.loadsir:loadsir:1.3.6',
+            "lottie"               : 'com.airbnb.android:lottie:3.4.0',
+            //Bugly
+            //bugly热更新集成
+            "bugly-upgrade"        : 'com.tencent.bugly:crashreport_upgrade:latest.release',
+            "bugly-tinker"         : 'com.tencent.tinker:tinker-android-lib:1.9.14.3',
+            "bugly-report"         : 'com.tencent.bugly:nativecrashreport:latest.release',
+            "circleimageview"      : 'de.hdodenhof:circleimageview:3.1.0',
+            "richtext"             : 'com.zzhoujay.richtext:richtext:3.0.7',
+            //图片加载的glide库
+            "arms-imageloader"     : 'me.jessyan:arms-imageloader-glide:2.5.2',
+            //arms-项目框架核心库
+            "arms"                 : 'me.jessyan:arms:2.5.2',
+            //适配
+            "autosize"             : "me.jessyan:autosize:1.1.2",
+            //标签库
+            "flow-layout"          : 'com.hyman:flowlayout-lib:1.1.2',
+            //高性能通用 key-value 组件
+            "mmkv"                 : 'com.tencent:mmkv:1.0.22',
+            //    App图标未阅消息
+            "ShortcutBadger"       : "me.leolin:ShortcutBadger:1.1.22@aar",
+            //阻止app崩溃
+            "customactivityoncrash": 'cat.ereza:customactivityoncrash:2.2.0',
+    ]
+    customLibs = customDeps.values()
+}
