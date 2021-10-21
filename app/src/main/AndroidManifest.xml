@@ -3,21 +3,30 @@
     package="com.vertex.cloud">
 
     <application
+        android:name=".base.BaseApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="${ICON}"
+        android:label="${APP_NAME}"
         android:supportsRtl="true"
-        android:theme="@style/Theme.VertexCloud">
+        android:theme="@style/AppTheme">
+
         <activity
             android:name=".mvp.ui.activity.MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="640" /> <!-- arms配置 -->
+
     </application>
 
 </manifest>

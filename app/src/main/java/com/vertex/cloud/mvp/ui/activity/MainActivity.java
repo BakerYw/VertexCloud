@@ -10,6 +10,7 @@ import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 
+import com.vertex.cloud.base.AheadBaseActivity;
 import com.vertex.cloud.di.component.DaggerMainComponent;
 import com.vertex.cloud.mvp.contract.MainContract;
 import com.vertex.cloud.mvp.presenter.MainPresenter;
@@ -19,7 +20,7 @@ import com.vertex.cloud.R;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.View {
+public class MainActivity extends AheadBaseActivity<MainPresenter> implements MainContract.View {
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {

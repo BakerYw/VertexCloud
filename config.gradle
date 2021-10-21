@@ -3,16 +3,11 @@ ext {
     android = [
             compileSdkVersion: 30,
             buildToolsVersion: "30.0.3",
-            applicationIdDev : "com.ahead.aheadoanew",
-            applicationId    : "com.ahead.aheadoanew",
+            applicationId    : "com.vertex.cloud",
             minSdkVersion    : 21,
             targetSdkVersion : 30,
-            versionCode      : 20211020,
-            versionName      : "1.0.0",
-            apiBaseDev       : '"https://test.jxusptpay.com/"',
-            apiBase          : '"https://oa.jxusptpay.com/"',
-            apiWebUrlDev     : '"https://test.jxusptpay.com/aheadOA/App/"',
-            apiWebUrl        : '"https://oa.jxusptpay.com/aheadOA/App/"',
+            versionCode      : 1,
+            versionName      : "1.0",
             apiServerUrlDev  : '"https://test.jxusptpay.com/aheadOA/"',
             apiServerUrl     : '"https://oa.jxusptpay.com/aheadOA/"',
     ]
@@ -21,6 +16,7 @@ ext {
             dagger2SdkVersion: "2.23.2",
             canarySdkVersion : "1.6.3"
     ]
+
     dependencies = [
             //tools
             "dagger2-compiler"  : "com.google.dagger:dagger-compiler:${version["dagger2SdkVersion"]}",
@@ -97,7 +93,7 @@ ext {
             "flow-layout"          : 'com.hyman:flowlayout-lib:1.1.2',
             //高性能通用 key-value 组件
             "mmkv"                 : 'com.tencent:mmkv:1.0.22',
-            //    App图标未阅消息
+            //App图标未阅消息
             "ShortcutBadger"       : "me.leolin:ShortcutBadger:1.1.22@aar",
             //阻止app崩溃
             "customactivityoncrash": 'cat.ereza:customactivityoncrash:2.2.0',

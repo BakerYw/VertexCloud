@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- 主色  -->
+    <color name="colorPrimary">#1389FF</color>
+    <!--  辅助警示色  -->
+    <color name="colorWarn">#FF920C</color>
+    <!--  文字颜色  -->
+    <color name="colorBlack0">#000000</color>
+    <color name="colorBlack3">#333333</color>
+    <color name="colorBlack6">#666666</color>
+    <color name="colorBlack9">#999999</color>
+    <color name="colorError">#F73B48</color>
+    <!--  输入框边框  -->
+    <color name="colorBorder">#D2D2D2</color>
+    <!--  分割线  -->
+    <color name="colorLine">#F1F1F1</color>
+
+    <color name="ColorWhite">#FFFFFF</color>
+    <color name="ColorWhiteF2">#f2f2f2</color>
+    <color name="ColorWhiteF8">#f8f8f8</color>
+    <color name="colorAccent">#7B1FA2</color>
+    <color name="purple_300">#C089DD</color>
+    <color name="ripple_dark">#11000000</color>
+    <color name="colorBlack9f">#9FA7B2</color>
+    <color name="windowBackground">#F5F5F5</color>
+    <color name="background">#d8d8d8</color>
+    <color name="backgroundeee">#eeeeee</color>
+    <color name="backgrounGrey">#CCCCCC</color>
+    <color name="texttipColor">#a0a0a0</color>
+    <color name="bg_focus">#DDDDDD</color>
+    <color name="diverColoe">#cecece</color>
+    <color name="red">#F44336</color>
+    <color name="accent">#E91E63</color>
+    <color name="chinaHoliDay">#e10015</color>
+    <color name="channelNormalTextColor">#6D6D6D</color>
+    <color name="channelFixedTextColor">#CCCCCC</color>
+    <color name="subTitleTextColor">#A0A3AF</color>
 </resources>
