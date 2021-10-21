@@ -1,4 +1,4 @@
-package com.vertex.cloud.net;
+package com.vertex.cloud.mvp.model.net;
 
 
 /**
