@@ -31,56 +31,58 @@ ext {
     ]
     customDeps = [
             //androidX基础库
-            "appcompat"            : "androidx.appcompat:appcompat:1.3.1",
-            "material"             : "com.google.android.material:material:1.2.0-alpha04",
-            "constraintlayout"     : "androidx.constraintlayout:constraintlayout:2.1.1",
-            "cardview"             : "androidx.cardview:cardview:1.0.0",
+            "appcompat"             : "androidx.appcompat:appcompat:1.3.1",
+            "material"              : "com.google.android.material:material:1.2.0-alpha04",
+            "constraintlayout"      : "androidx.constraintlayout:constraintlayout:2.1.1",
+            "cardview"              : "androidx.cardview:cardview:1.0.0",
+            "flexbox"               : "com.google.android:flexbox:2.0.1",
             //utils
-            "okhttputils"          : "com.zhy:okhttputils:2.6.2",//准备删除，暂时使用
-            "utilcode"             : "com.blankj:utilcodex:1.30.6",
-            "eventbus"             : "org.greenrobot:eventbus:3.2.0",
-            "multidex"             : "com.android.support:multidex:1.0.3",
-            "lifecyclemodel"       : "me.jessyan:lifecyclemodel:1.0.1",
-            "retrofit-url-manager" : "me.jessyan:retrofit-url-manager:1.4.0",
-            "progressmanager"      : "me.jessyan:progressmanager:1.5.0",
+            "okhttputils"           : "com.zhy:okhttputils:2.6.2",//准备删除，暂时使用
+            "utilcode"              : "com.blankj:utilcodex:1.30.6",
+            "eventbus"              : "org.greenrobot:eventbus:3.2.0",
+            "multidex"              : "com.android.support:multidex:1.0.3",
+            "lifecyclemodel"        : "me.jessyan:lifecyclemodel:1.0.1",
+            "retrofit-url-manager"  : "me.jessyan:retrofit-url-manager:1.4.0",
+            "progressmanager"       : "me.jessyan:progressmanager:1.5.0",
             //popwindow
-            "base-pop"             : 'com.github.razerdp:BasePopup:2.2.2.2',
-            "pickerview"           : 'com.contrarywind:Android-PickerView:4.1.9',
-            "agentwebview"         : "com.just.agentweb:agentweb:4.1.2",
-            "dialog-v3x"           : 'com.kongzue.dialog_v3x:dialog:3.2.4',
+            "base-pop"              : 'com.github.razerdp:BasePopup:2.2.2.2',
+            "pickerview"            : 'com.contrarywind:Android-PickerView:4.1.9',
+            "agentwebview"          : "com.just.agentweb:agentweb:4.1.2",
+            "dialog-v3x"            : 'com.kongzue.dialog_v3x:dialog:3.2.4',
             //图片压缩算法
-            "Luban"                : "top.zibin:Luban:1.1.8",
-            "Jsoup"                : 'org.jsoup:jsoup:1.9.2',
+            "Luban"                 : "top.zibin:Luban:1.1.8",
+            "Jsoup"                 : 'org.jsoup:jsoup:1.9.2',
             //    二维码
-            "zxing"                : "com.journeyapps:zxing-android-embedded:3.5.0",
+            "zxing"                 : "com.journeyapps:zxing-android-embedded:3.5.0",
             //fragment管理库
-            "fragmentationx"       : 'me.yokeyword:fragmentationx:1.0.1',
+            "fragmentationx"        : 'me.yokeyword:fragmentationx:1.0.1',
             //底部导航栏
             "BottomNavigationViewEx": 'com.github.ittianyu:BottomNavigationViewEx:2.0.4',
+            "badgeview"             : 'q.rorbin:badgeview:1.1.0',
             //tablayout指示器
-            "Magicindicator"       : 'com.github.hackware1993:MagicIndicator:1.6.0',
+            "Magicindicator"        : 'com.github.hackware1993:MagicIndicator:1.6.0',
             //轮播图
-            "banner"               : 'cn.bingoogolapple:bga-banner:2.2.7@aar',
+            "banner"                : 'cn.bingoogolapple:bga-banner:2.2.7@aar',
             //baseAdapter
-            "baseadapter"          : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46',
+            "baseadapter"           : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46',
             //下拉刷新
-            "smartRefreshLayout"   : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-11",
-            "SmartRefreshHeader"   : "com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-andx-11",
+            "smartRefreshLayout"    : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-11",
+            "SmartRefreshHeader"    : "com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-andx-11",
             //页面管理框架
-            "loadsir"              : 'com.kingja.loadsir:loadsir:1.3.6',
-            "lottie"               : 'com.airbnb.android:lottie:3.4.0',
+            "loadsir"               : 'com.kingja.loadsir:loadsir:1.3.6',
+            "lottie"                : 'com.airbnb.android:lottie:3.4.0',
             //图片加载的glide库
-            "arms-imageloader"     : 'me.jessyan:arms-imageloader-glide:2.5.2',
+            "arms-imageloader"      : 'me.jessyan:arms-imageloader-glide:2.5.2',
             //arms-项目框架核心库
-            "arms"                 : 'me.jessyan:arms:2.5.2',
+            "arms"                  : 'me.jessyan:arms:2.5.2',
             //适配
-            "autosize"             : "me.jessyan:autosize:1.2.1",
+            "autosize"              : "me.jessyan:autosize:1.2.1",
             //标签库
-            "flow-layout"          : 'com.hyman:flowlayout-lib:1.1.2',
+            "flow-layout"           : 'com.hyman:flowlayout-lib:1.1.2',
             //高性能通用 key-value 组件
-            "mmkv"                 : 'com.tencent:mmkv:1.0.22',
+            "mmkv"                  : 'com.tencent:mmkv:1.0.22',
             //阻止app崩溃
-            "customactivityoncrash": 'cat.ereza:customactivityoncrash:2.2.0',
+            "customactivityoncrash" : 'cat.ereza:customactivityoncrash:2.2.0',
     ]
     customLibs = customDeps.values()
 }

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.jess.arms.di.component.AppComponent;
 import com.vertex.cloud.R;
@@ -21,10 +22,12 @@ import com.vertex.cloud.mvp.ui.mine.MineFragment;
 import com.vertex.cloud.mvp.ui.work.WorkFragment;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import butterknife.BindView;
-import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportFragment;
+import q.rorbin.badgeview.Badge;
+import q.rorbin.badgeview.QBadgeView;
 
 /**
  * @Author CHEESE
@@ -87,10 +90,25 @@ public class MainFragment extends CloudBaseFragment<MainPresenter> implements Ma
             }
             return true;
         });
+        addBadgeAt(1,21);
     }
+
 
     @Override
     public void setData(@Nullable Object data) {
 
+    }
+
+    private Badge addBadgeAt(int position, int number) {
+        // add badge
+        return new QBadgeView(getContext())
+                .setBadgeNumber(number)
+                .setGravityOffset(15, 2, true)
+                .bindTarget(mBnve.getBottomNavigationItemView(position))
+                .setOnDragStateChangedListener((dragState, badge, targetView) -> {
+                    if (Badge.OnDragStateChangedListener.STATE_SUCCEED == dragState)
+                        ToastUtils.showShort("你把消息偷走了！");
+                        addBadgeAt(position,0);
+                });
     }
 }
