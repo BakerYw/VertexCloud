@@ -25,6 +25,8 @@ import com.vertex.cloud.app.utils.DispUtility;
 
 import javax.inject.Inject;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import io.reactivex.subjects.BehaviorSubject;
 import io.reactivex.subjects.Subject;
 import me.yokeyword.fragmentation.SupportFragment;
@@ -49,6 +51,7 @@ public abstract class CloudBaseFragment<P extends IPresenter> extends SupportFra
     private final BehaviorSubject<FragmentEvent> mLifecycleSubject = BehaviorSubject.create();
     private Cache<String, Object> mCache;
     protected Context mContext;
+    private Unbinder mUnbinder;
 
     @Inject
     @Nullable
@@ -81,7 +84,12 @@ public abstract class CloudBaseFragment<P extends IPresenter> extends SupportFra
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         DispUtility.disabledDisplayDpiChange(this.getResources());
-        return initView(inflater, container, savedInstanceState);
+        View view=initView(inflater, container, savedInstanceState);
+        if (view != null) {
+            //绑定到butterknife
+            mUnbinder = ButterKnife.bind(this,view);
+        }
+        return view;
     }
 
 
@@ -90,6 +98,7 @@ public abstract class CloudBaseFragment<P extends IPresenter> extends SupportFra
         super.onDestroy();
         if (mPresenter != null) mPresenter.onDestroy();//释放资源
         this.mPresenter = null;
+        mUnbinder.unbind();
     }
 
     @Override

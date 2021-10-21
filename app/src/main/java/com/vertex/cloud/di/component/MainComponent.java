@@ -9,12 +9,12 @@ import com.vertex.cloud.di.module.MainModule;
 import com.vertex.cloud.mvp.contract.MainContract;
 
 import com.jess.arms.di.scope.ActivityScope;
-import com.vertex.cloud.mvp.ui.activity.MainActivity;
+import com.vertex.cloud.mvp.ui.main.fragment.MainFragment;
 
 @ActivityScope
 @Component(modules = MainModule.class, dependencies = AppComponent.class)
 public interface MainComponent {
-    void inject(MainActivity activity);
+    void inject(MainFragment fragment);
 
     @Component.Builder
     interface Builder {

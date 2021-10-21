@@ -7,8 +7,6 @@ import androidx.multidex.MultiDex;
 
 import com.blankj.utilcode.util.Utils;
 import com.jess.arms.base.delegate.AppLifecycles;
-import com.jess.arms.integration.cache.IntelligentCache;
-import com.jess.arms.utils.ArmsUtils;
 import com.kingja.loadsir.callback.SuccessCallback;
 import com.kingja.loadsir.core.LoadSir;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -19,11 +17,10 @@ import com.vertex.cloud.BuildConfig;
 import com.vertex.cloud.app.widget.loadsir.EmptyCallback;
 import com.vertex.cloud.app.widget.loadsir.ErrorCallback;
 import com.vertex.cloud.app.widget.loadsir.LoadingCallback;
-import com.vertex.cloud.mvp.ui.activity.MainActivity;
+import com.vertex.cloud.mvp.ui.main.activity.MainActivity;
 
 import butterknife.ButterKnife;
 import cat.ereza.customactivityoncrash.config.CaocConfig;
-import leakcanary.LeakCanary;
 import me.jessyan.autosize.AutoSizeConfig;
 import me.jessyan.autosize.unit.Subunits;
 import timber.log.Timber;

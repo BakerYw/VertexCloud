@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_info"
+        android:checked="true"
+        android:icon="@drawable/ic_info_selector"
+        android:title="@string/infomation" />
+
+    <item
+        android:id="@+id/menu_message"
+        android:icon="@drawable/ic_message_selector"
+        android:title="@string/message" />
+
+    <item
+        android:id="@+id/menu_work"
+        android:icon="@drawable/ic_work_selector"
+        android:title="@string/work" />
+    <item
+        android:id="@+id/menu_mine"
+        android:icon="@drawable/ic_mine_selector"
+        android:title="@string/mine" />
+</menu>

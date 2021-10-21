@@ -1,29 +1,37 @@
-package com.vertex.cloud.mvp.ui.activity;
+package com.vertex.cloud.mvp.ui.work;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 
-import com.vertex.cloud.app.base.CloudBaseActivity;
-import com.vertex.cloud.di.component.DaggerMainComponent;
-import com.vertex.cloud.mvp.contract.MainContract;
-import com.vertex.cloud.mvp.presenter.MainPresenter;
+import com.vertex.cloud.app.base.CloudBaseFragment;
+import com.vertex.cloud.di.component.DaggerWorkComponent;
+import com.vertex.cloud.mvp.contract.WorkContract;
+import com.vertex.cloud.mvp.presenter.WorkPresenter;
 
 import com.vertex.cloud.R;
 
-
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-public class MainActivity extends CloudBaseActivity<MainPresenter> implements MainContract.View {
+public class WorkFragment extends CloudBaseFragment<WorkPresenter> implements WorkContract.View {
+
+    public static WorkFragment newInstance() {
+        WorkFragment fragment = new WorkFragment();
+        return fragment;
+    }
 
     @Override
-    public void setupActivityComponent(@NonNull AppComponent appComponent) {
-        DaggerMainComponent //如找不到该类,请编译一下项目
+    public void setupFragmentComponent(@NonNull AppComponent appComponent) {
+        DaggerWorkComponent //如找不到该类,请编译一下项目
                 .builder()
                 .appComponent(appComponent)
                 .view(this)
@@ -32,12 +40,17 @@ public class MainActivity extends CloudBaseActivity<MainPresenter> implements Ma
     }
 
     @Override
-    public int initView(@Nullable Bundle savedInstanceState) {
-        return R.layout.activity_main; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
+    public View initView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_work, container, false);
     }
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    public void setData(@Nullable Object data) {
 
     }
 
@@ -65,6 +78,6 @@ public class MainActivity extends CloudBaseActivity<MainPresenter> implements Ma
 
     @Override
     public void killMyself() {
-        finish();
+
     }
 }
