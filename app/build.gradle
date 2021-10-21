@@ -37,6 +37,8 @@ android {
             buildConfigField "String", "APISERVERURL", rootProject.ext.android.apiServerUrlDev
             buildConfigField 'boolean', 'IS_RELEASE', 'false'
             buildConfigField "boolean", "USE_CANARY", "true"
+            manifestPlaceholders = [APP_NAME: "顶点云",
+                                    ICON    : "@mipmap/ic_app_logo"]
         }
         //正式版本
         Pd {
@@ -48,6 +50,8 @@ android {
             buildConfigField "String", "APIBASE", rootProject.ext.android.apiBase
             buildConfigField "String", "APIWEBURL", rootProject.ext.android.apiWebUrl
             buildConfigField "String", "APISERVERURL", rootProject.ext.android.apiServerUrl
+            manifestPlaceholders = [APP_NAME: "顶点云",
+                                    ICON    : "@mipmap/ic_app_logo",]
             buildConfigField 'boolean', 'IS_RELEASE', 'true'
             buildConfigField "boolean", "USE_CANARY", "true"
         }
@@ -56,29 +60,18 @@ android {
     buildTypes {
         //测试
         debug {
-            applicationIdSuffix ".dev"
-            buildConfigField "String", "APISERVERURL", rootProject.ext.android.apiServerUrlDev
-            manifestPlaceholders = [APP_NAME: "顶点云",
-                                    ICON    : "@mipmap/ic_app_logo"]
-            //signingConfig signingConfigs.debug
             minifyEnabled false
             shrinkResources false
             zipAlignEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            debuggable true
         }
 
         //正式
         release {
-            buildConfigField "String", "APISERVERURL", rootProject.ext.android.apiServerUrl
-            manifestPlaceholders = [APP_NAME: "顶点云",
-                                    ICON    : "@mipmap/ic_app_logo",]
-            //signingConfig signingConfigs.release
-            minifyEnabled false
-            shrinkResources false
+            minifyEnabled true
+            shrinkResources true
             zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            debuggable true
         }
     }
 
