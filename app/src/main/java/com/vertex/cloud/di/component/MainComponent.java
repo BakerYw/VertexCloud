@@ -9,7 +9,7 @@ import com.vertex.cloud.di.module.MainModule;
 import com.vertex.cloud.mvp.contract.MainContract;
 
 import com.jess.arms.di.scope.ActivityScope;
-import com.vertex.cloud.mvp.ui.activity.MainActivity;;
+import com.vertex.cloud.mvp.ui.activity.MainActivity;
 
 @ActivityScope
 @Component(modules = MainModule.class, dependencies = AppComponent.class)

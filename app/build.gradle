@@ -1,19 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
-    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
     useLibrary 'org.apache.http.legacy'
-    compileOptions {
-        targetCompatibility JavaVersion.VERSION_1_8
-        sourceCompatibility JavaVersion.VERSION_1_8
-    }
+
     defaultConfig {
-        applicationId "com.vertex.cloud"
-        minSdkVersion rootProject.ext.android["minSdkVersion"]
-        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode rootProject.ext.android["versionCode"]
-        versionName rootProject.ext.android["versionName"]
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         ndk {
@@ -56,25 +54,55 @@ android {
     }
 
     buildTypes {
-        release {
+        //测试
+        debug {
+            applicationIdSuffix ".dev"
+            buildConfigField "String", "APISERVERURL", rootProject.ext.android.apiServerUrlDev
+            manifestPlaceholders = [APP_NAME: "顶点云",
+                                    ICON    : "@mipmap/ic_app_logo"]
+            //signingConfig signingConfigs.debug
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            shrinkResources false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
+        }
+
+        //正式
+        release {
+            buildConfigField "String", "APISERVERURL", rootProject.ext.android.apiServerUrl
+            manifestPlaceholders = [APP_NAME: "顶点云",
+                                    ICON    : "@mipmap/ic_app_logo",]
+            //signingConfig signingConfigs.release
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    dataBinding {
+        enabled true
+    }
+
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
         }
     }
+
     lintOptions {
         disable 'InvalidPackage'
         disable "ResourceType"
         abortOnError false
     }
+
     dexOptions {
         javaMaxHeapSize "4g"
         jumboMode = true
