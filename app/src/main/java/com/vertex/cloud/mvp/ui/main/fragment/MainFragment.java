@@ -13,6 +13,7 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.jess.arms.di.component.AppComponent;
 import com.vertex.cloud.R;
 import com.vertex.cloud.app.base.CloudBaseFragment;
+import com.vertex.cloud.app.utils.CloudUtils;
 import com.vertex.cloud.di.component.DaggerMainComponent;
 import com.vertex.cloud.mvp.contract.MainContract;
 import com.vertex.cloud.mvp.presenter.MainPresenter;
@@ -22,7 +23,6 @@ import com.vertex.cloud.mvp.ui.mine.MineFragment;
 import com.vertex.cloud.mvp.ui.work.WorkFragment;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import butterknife.BindView;
 import me.yokeyword.fragmentation.SupportFragment;
@@ -70,6 +70,7 @@ public class MainFragment extends CloudBaseFragment<MainPresenter> implements Ma
             mFragments.add(2, findChildFragment(WorkFragment.class));
             mFragments.add(3, findChildFragment(MineFragment.class));
         }
+        mBnve.setItemTextColor(CloudUtils.getColorStateList(mContext));
         mBnve.enableAnimation(false);
         mBnve.enableShiftingMode(false);
         mBnve.enableItemShiftingMode(false);
