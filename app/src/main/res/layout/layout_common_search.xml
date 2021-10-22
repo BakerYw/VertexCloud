@@ -18,6 +18,6 @@
         android:hint="请输入搜索内容"
         android:paddingLeft="@dimen/dp_14"
         android:paddingRight="@dimen/dp_14"
-        android:textColorHint="@color/colorBlack999"
+        android:textColorHint="@color/colorBlack9"
         android:textSize="@dimen/sp_13" />
 </LinearLayout>

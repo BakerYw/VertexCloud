@@ -32,11 +32,8 @@ android {
             versionName rootProject.ext.android.versionName
             versionCode rootProject.ext.android.versionCode
             buildConfigField "boolean", "LOG_DEBUG", "true"
-            buildConfigField "String", "APIWEBURL", rootProject.ext.android.apiWebUrlDev
-            buildConfigField "String", "APIBASE", rootProject.ext.android.apiBaseDev
-            buildConfigField "String", "APISERVERURL", rootProject.ext.android.apiServerUrlDev
             buildConfigField 'boolean', 'IS_RELEASE', 'false'
-            buildConfigField "boolean", "USE_CANARY", "true"
+            buildConfigField "String", "APISERVERURL", rootProject.ext.android.apiServerUrlDev
             manifestPlaceholders = [APP_NAME: "顶点云",
                                     ICON    : "@mipmap/ic_app_logo"]
         }
@@ -47,13 +44,10 @@ android {
             versionName rootProject.ext.android.versionName
             versionCode rootProject.ext.android.versionCode
             buildConfigField "boolean", "LOG_DEBUG", "true"
-            buildConfigField "String", "APIBASE", rootProject.ext.android.apiBase
-            buildConfigField "String", "APIWEBURL", rootProject.ext.android.apiWebUrl
+            buildConfigField 'boolean', 'IS_RELEASE', 'true'
             buildConfigField "String", "APISERVERURL", rootProject.ext.android.apiServerUrl
             manifestPlaceholders = [APP_NAME: "顶点云",
                                     ICON    : "@mipmap/ic_app_logo",]
-            buildConfigField 'boolean', 'IS_RELEASE', 'true'
-            buildConfigField "boolean", "USE_CANARY", "true"
         }
     }
 

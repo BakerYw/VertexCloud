@@ -16,13 +16,13 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:windowBackground">@color/white_f2</item>
+        <item name="android:windowBackground">@color/colorWhiteF2</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:navigationBarColor">@color/transparent</item>
         <item name="android:windowContentTransitions">true</item>
-        <item name="fontFamily">@font/din_medium</item>
+<!--        <item name="fontFamily">@font/din_medium</item>-->
     </style>
 
 

@@ -5,11 +5,12 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:windowBackground">@color/white_f2</item>
+        <item name="android:windowBackground">@color/colorWhiteF2</item>
         <item name="android:navigationBarColor">@color/transparent</item>
         <item name="android:windowContentTransitions">true</item>
-        <item name="fontFamily">@font/din_medium</item>
+<!--        <item name="fontFamily">@font/din_medium</item>-->
     </style>
+
     <style name="MyFlutterTheme" parent="@style/Base.CardView">
         <item name="android:windowIsTranslucent">true</item>
     </style>
@@ -55,4 +56,16 @@
         <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
         <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
     </style>
+
+    <style name="all_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--该行代码就是设置AlertDialog的背景-->
+        <!--<item name="android:background">@null</item>-->
+    </style>
+
 </resources>

@@ -21,7 +21,7 @@
             android:layout_marginBottom="@dimen/dp_15"
             android:drawableRight="@drawable/ic_down"
             android:text="江西巨峰科技发展有..."
-            android:textColor="@color/colorBlack333"
+            android:textColor="@color/colorBlack3"
             android:textSize="17sp"
             android:textStyle="bold" />
 
@@ -35,7 +35,7 @@
             android:layout_marginBottom="@dimen/dp_15"
             android:drawableRight="@drawable/ic_down"
             android:text="**项目"
-            android:textColor="@color/colorBlack333"
+            android:textColor="@color/colorBlack3"
             android:textSize="17sp"
             android:textStyle="bold" />
         <include
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/dp_10"
             android:text="功能菜单"
-            android:textColor="@color/colorBlack333"
+            android:textColor="@color/colorBlack3"
             android:textSize="@dimen/sp_13"
             android:textStyle="bold" />
 

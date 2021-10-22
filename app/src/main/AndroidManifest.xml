@@ -43,16 +43,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name=".mvp.ui.main.activity.MainActivity"
-            android:screenOrientation="portrait">
+        <activity android:name=".mvp.ui.login.RegisterActivity" />
+        <activity android:name=".mvp.ui.login.ForgetPwdActivity" />
+        <activity android:name=".mvp.ui.login.CodeLoginActivity" />
+        <activity android:name=".mvp.ui.login.PwdLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mvp.ui.main.activity.InfoMationsActivity" />
+        <activity
+            android:name=".mvp.ui.main.activity.MainActivity"
+            android:screenOrientation="portrait" />
         <!--
             只要依赖 AutoSize 就必须填写设计图尺寸, 否则报错, 不想使用 AutoSize 就不要依赖 AutoSize
            只要填写完设计图的尺寸, AutoSize 就会自动启动, 以下 dp 尺寸是根据公式 px / (dpi / 160) 求出, 运算时使用测试机的 dpi 即可
@@ -63,7 +66,7 @@
             android:value="360" />
         <meta-data
             android:name="design_height_in_dp"
-            android:value="640" /> <!-- arms配置 -->
+            android:value="780" /> <!-- arms配置 -->
         <meta-data
             android:name="com.vertex.cloud.app.GlobalConfiguration"
             android:value="ConfigModule" />

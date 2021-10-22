@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="11"
         android:gravity="center"
-        android:textColor="@color/colorBlack333"
+        android:textColor="@color/colorBlack3"
         android:textSize="@dimen/sp_19"
         android:textStyle="bold" />
 
@@ -23,6 +23,6 @@
         android:text="在建项目"
         android:layout_marginTop="@dimen/dp_2"
         android:gravity="center"
-        android:textColor="@color/colorBlack999"
+        android:textColor="@color/colorBlack9"
         android:textSize="@dimen/sp_10" />
 </LinearLayout>

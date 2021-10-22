@@ -12,6 +12,7 @@ import com.jess.arms.http.log.FormatPrinter;
 import com.jess.arms.http.log.RequestInterceptor;
 import com.jess.arms.integration.ConfigModule;
 import com.vertex.cloud.BuildConfig;
+
 import java.util.List;
 
 import okhttp3.MediaType;
