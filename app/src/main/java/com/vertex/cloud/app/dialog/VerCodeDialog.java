@@ -54,7 +54,6 @@ public class VerCodeDialog extends Dialog {
         layoutParams.width = (int) display.getWidth();
         //layoutParams.width = (int) (display.getWidth() * 0.5);// 宽度设置为屏幕的0.5
         getWindow().setAttributes(layoutParams);
-
     }
 
     @OnClick({R.id.dialog_ver_code_iv_del, R.id.dialog_ver_code_btn_confirm})
@@ -64,6 +63,7 @@ public class VerCodeDialog extends Dialog {
                 dismiss();
                 break;
             case R.id.dialog_ver_code_btn_confirm:
+                codeConfirmListener.onVerCodeConfirmClick();
                 dismiss();
                 break;
         }

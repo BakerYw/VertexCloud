@@ -45,14 +45,15 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".mvp.ui.login.RegisterActivity" />
         <activity android:name=".mvp.ui.login.ForgetPwdActivity" />
-        <activity android:name=".mvp.ui.login.CodeLoginActivity" />
-        <activity android:name=".mvp.ui.login.PwdLoginActivity">
+        <activity android:name=".mvp.ui.login.CodeLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".mvp.ui.login.PwdLoginActivity"/>
+
         <activity
             android:name=".mvp.ui.main.activity.MainActivity"
             android:screenOrientation="portrait" />

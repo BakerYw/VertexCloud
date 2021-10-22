@@ -11,6 +11,13 @@ import com.jess.arms.di.scope.ActivityScope;
 import javax.inject.Inject;
 
 import com.vertex.cloud.mvp.contract.CodeLoginContract;
+import com.vertex.cloud.mvp.model.entity.CloudApiResult;
+import com.vertex.cloud.mvp.model.entity.CodeEntity;
+import com.vertex.cloud.mvp.model.entity.LoginEntity;
+import com.vertex.cloud.mvp.model.net.ApiService;
+
+import io.reactivex.Observable;
+import okhttp3.RequestBody;
 
 
 /**
@@ -43,4 +50,20 @@ public class CodeLoginModel extends BaseModel implements CodeLoginContract.Model
         this.mGson = null;
         this.mApplication = null;
     }
+
+    @Override
+    public Observable<CloudApiResult<CodeEntity>> getCode() {
+        return mRepositoryManager.obtainRetrofitService(ApiService.class).getCode();
+    }
+
+    @Override
+    public Observable<CloudApiResult<CodeEntity>> getSMSCode(RequestBody requestBody) {
+        return mRepositoryManager.obtainRetrofitService(ApiService.class).getSMSCode(requestBody);
+    }
+
+    @Override
+    public Observable<CloudApiResult<LoginEntity>> smsLogin(RequestBody requestBody) {
+        return mRepositoryManager.obtainRetrofitService(ApiService.class).smsLogin(requestBody);
+    }
+
 }

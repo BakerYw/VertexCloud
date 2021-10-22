@@ -9,7 +9,7 @@ ext {
             targetSdkVersion : 30,
             versionCode      : 1,
             versionName      : "1.0.0",
-            apiServerUrlDev  : '"https://test.jxusptpay.com/aheadOA/"',
+            apiServerUrlDev  : '"http://114.55.178.164:8080/"', //测试地址
             apiServerUrl     : '"https://oa.jxusptpay.com/aheadOA/"',
     ]
 

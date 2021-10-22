@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,11 +24,15 @@ import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.vertex.cloud.R;
+import com.vertex.cloud.app.constant.Constant;
 import com.vertex.cloud.app.dialog.VerCodeDialog;
 import com.vertex.cloud.app.utils.CountDownTimer;
+import com.vertex.cloud.app.utils.MMKVUtil;
 import com.vertex.cloud.app.view.ClearEditText;
 import com.vertex.cloud.di.component.DaggerCodeLoginComponent;
 import com.vertex.cloud.mvp.contract.CodeLoginContract;
+import com.vertex.cloud.mvp.model.entity.CodeEntity;
+import com.vertex.cloud.mvp.model.entity.LoginEntity;
 import com.vertex.cloud.mvp.presenter.CodeLoginPresenter;
 
 import butterknife.BindView;
@@ -39,7 +45,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 /**
  * 验证码登录页
  */
-public class CodeLoginActivity extends BaseActivity<CodeLoginPresenter> implements CodeLoginContract.View {
+public class CodeLoginActivity extends BaseActivity<CodeLoginPresenter> implements CodeLoginContract.View, VerCodeDialog.OnVerCodeConfirmListener {
 
     @BindView(R.id.top_iv_left_img)
     ImageView topIvLeftImg;
@@ -64,6 +70,9 @@ public class CodeLoginActivity extends BaseActivity<CodeLoginPresenter> implemen
 
     //判断协议是否选中
     private boolean isSelect = false;
+
+    private String mPhone;
+    private String mCode;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -152,15 +161,13 @@ public class CodeLoginActivity extends BaseActivity<CodeLoginPresenter> implemen
                 break;
             case R.id.login_tv_get_code:
                 //获取验证码
-                VerCodeDialog verCodeDialog = new VerCodeDialog(this);
-                verCodeDialog.show();
+                mPhone = loginEdPhone.getText().toString().trim();
+                if (TextUtils.isEmpty(mPhone)) {
+                    ToastUtils.showShort("手机号不能为空");
+                    return;
+                }
+                mPresenter.getCode();
 
-                //获取验证码
-//                if (TextUtils.isEmpty(loginEdPhone.getText().toString().trim())) {
-//                    ToastUtils.showShort("手机号不能为空");
-//                    return;
-//                }
-//
 //                if (CountDownTimer.iscountdown) {
 //                    ToastUtils.showShort("验证码发送频繁，请稍后再试");
 //                    break;
@@ -172,11 +179,54 @@ public class CodeLoginActivity extends BaseActivity<CodeLoginPresenter> implemen
                 break;
             case R.id.login_btn_login:
                 //登录
+                mPhone = loginEdPhone.getText().toString().trim();
+                mCode = loginSmsCode.getText().toString().trim();
+                if (TextUtils.isEmpty(mPhone)) {
+                    ToastUtils.showShort("手机号不能为空");
+                    return;
+                }
+                if (TextUtils.isEmpty(mCode)) {
+                    ToastUtils.showShort("验证码不能为空");
+                    return;
+                }
+                if (!isSelect) {
+                    ToastUtils.showShort("请勾选相关协议");
+                    return;
+                }
+                mPresenter.smsLogin(mPhone, mCode, "1");
                 break;
             case R.id.login_iv_we_chat:
                 //微信登录
                 break;
         }
+    }
+
+    @Override
+    public void onVerCodeConfirmClick() {
+        //验证码弹框确定返回
+        mPresenter.getSMSCode(mPhone, "1", "", "");
+    }
+
+    @Override
+    public void getCodeSuccess(CodeEntity data) {
+        //获取图像验证码成功
+        VerCodeDialog verCodeDialog = new VerCodeDialog(this);
+        verCodeDialog.setOnRoomLockListener(this);
+        verCodeDialog.show();
+    }
+
+    @Override
+    public void getSMSCodeSuccess(CodeEntity data) {
+        //获取短信验证码成功
+        ToastUtils.showShort("获取短信验证码成功");
+    }
+
+    @Override
+    public void smsLoginSuccess(LoginEntity data) {
+        //登录成功
+        //储存Token
+        MMKVUtil.getInstance().putValue(Constant.Token, data.getAccess_token());
+        ToastUtils.showShort("登录成功");
     }
 
     @Override
